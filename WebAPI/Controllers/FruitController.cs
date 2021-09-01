@@ -15,7 +15,7 @@ namespace WebAPI.Controllers
         [HttpGet("GetFruit")]
         public ActionResult<List<String>> GetFruit()
         {
-            List<string> fruit = new List<string>
+            IEnumerable<string> fruit = new List<string>
             {
                 "Apple",
                 "Pear",
@@ -23,7 +23,7 @@ namespace WebAPI.Controllers
                 "Strawberry",
             };
 
-            return fruit;
+            return fruit.ToList();
         }
     }
 }
