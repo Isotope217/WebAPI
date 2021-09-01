@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {
@@ -12,18 +13,17 @@ namespace WebAPI.Controllers
     [ApiController]
     public class FruitController : ControllerBase
     {
+        private readonly IFruitService _fruitService;
+
+        public FruitController(IFruitService service)
+        {
+            _fruitService = service;
+        }
+
         [HttpGet("GetFruit")]
         public ActionResult<List<String>> GetFruit()
         {
-            IEnumerable<string> fruit = new List<string>
-            {
-                "Apple",
-                "Pear",
-                "Mango",
-                "Strawberry",
-            };
-
-            return fruit.ToList();
+            return _fruitService.GetFruit().ToList();
         }
     }
 }
