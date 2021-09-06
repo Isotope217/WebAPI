@@ -1,14 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using WebAPI.Entities;
 using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {
-    
+
     [Route("api/[controller]")]
     [ApiController]
     public class FruitController : ControllerBase
@@ -21,7 +19,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("GetFruit")]
-        public ActionResult<List<String>> GetFruit()
+        public ActionResult<List<Fruit>> GetFruit()
         {
             return _fruitService.GetFruit().ToList();
         }
