@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.Entities;
+using WebAPI.Repositories;
 using WebAPI.Services;
 
 namespace WebAPI
@@ -40,6 +42,7 @@ namespace WebAPI
             });
 
             services.AddScoped<IFruitService, FruitService>();
+            services.AddScoped<IRepository<Fruit>, FruitRespository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
