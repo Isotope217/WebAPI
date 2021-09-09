@@ -9,7 +9,7 @@ using Xunit;
 
 namespace WebAPI.Unit.Test
 {
-    public class UnitTest1
+    public class FruitServiceTest
     {
 
         [Fact]
